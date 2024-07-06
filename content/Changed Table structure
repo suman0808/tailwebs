@@ -1,0 +1,141 @@
+Changed Table structure
+
+1. admin
+	. admin_id
+	. admin_name to fullname
+	. username
+	. admin_email to email
+	. admin_image to profile_image
+	. admin_password to password
+	. admin_type  -  (0:admin, 1:super admin, 2:manager, 3:associate)
+	. otp
+	. otp_generated_on
+	. level1
+	. level2
+	. order_columns
+	. updated_on
+	. admin_status
+2. states
+	. st_id to state_id
+	. state_name
+	. state_code
+	. st_status to state_status
+3. county
+	. c_id to county_id
+	. st_id to state_id
+	. county_name
+	. county_code
+	. county_status
+4. city
+	. city_id
+	. st_id to state_id
+	. c_id to county_id
+	. city_name
+	. city_code
+	. city_status
+5. zipcode to zipcodes
+	. zip_id to zipcode_id
+	. st_id to state_id
+	. c_id to county_id
+	. city_id
+	. zipcode
+	. zip_status to zipcode_status
+6. email_accounts   -   complete new
+7. general_settings   -   complete new
+8. meta_info   -   complete new
+9. vendor_price_file   -   vendor_price_sample
+	. vpf_id to vps_id
+	. vp_file to vps_file
+10. users   -  customers
+	. user_id to customer_id
+	. fullname
+	. email
+	. company_name
+	. profile_image
+	. password
+	. pr_con_name to primary_contact_name
+	. pr_con_number to primary_contact_number
+	. pr_con_email to primary_contact_email
+	. ex_con_name to executive_contact_name
+	. ex_con_number to executive_contact_number
+	. ex_con_email to executive_contact_email
+	. bill_con_name to billing_contact_name
+	. bill_con_number to billing_contact_number
+	. bill_con_email to billing_contact_email
+	. street_address
+	. city
+	. state
+	. county
+	. country
+	. zip to zipcode
+	. otp
+	. otp_generated_on
+	. updated_on
+	. flag to customer_status
+11. category to categories
+	. cat_id
+	. cat_action   -  removed
+	. cat_name to category_name
+	. url_name to category_url_link
+	. category_code
+	. cat_desc to category_description
+	. partners   -  removed
+	. proc_levels to process_levels
+	. meta_title
+	. meta_description
+	. meta_keywords
+	. updated_on
+	. cat_status to category_status
+12. products to services
+	. p_id to service_id
+	. prod_unique_id to service_url_link
+	. service_id to service_code
+	. cat_id to category_id
+	. prod_name to service_name
+	. service_short_info
+	. prod_full_desc to service_info
+	. prod_images to service_image
+	. proc_levels to service_process_levels
+	. price to service_price
+	. days_to_complete to no_of_days_to_complete
+	. meta_tag_title to meta_title
+	. prod_small_desc to meta_description
+	. prod_tags to meta_keywords
+	. prod_status to service_status
+	. show_status to service_display_status
+	. page_view, pdf_file  -  removed
+13. vendors
+	. vendor_id
+	. st_id to state_id
+	. fullname
+	. email
+	. profile_image
+	. password
+	. pr_con_name to primary_contact_name
+	. pr_con_number to primary_contact_number
+	. pr_con_email to primary_contact_email
+	. ex_con_name to executive_contact_name
+	. ex_con_number to executive_contact_number
+	. ex_con_email to executive_contact_email
+	. street_address
+	. city
+	. state
+	. county
+	. country
+	. zip to zipcode
+	. eo_number
+	. eo_expiry to eo_expiry_date
+	. fax
+	. w9_form to w9_form_attachment
+	. eo_form to eo_form_attachment
+	. service_list to service_price_list
+	. otp
+	. otp_generated_on
+	. updated_on
+	. flag to customer_status
+14. add_ons
+	. ao_id to add_on_id
+	. st_id to state_id
+	. add_on_name
+	. price to add_on_price
+	. ao_status to add_on_status

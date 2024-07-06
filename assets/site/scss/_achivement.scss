@@ -1,0 +1,116 @@
+/* ----------------------------------
+    Achivement Style
+ ------------------------------------*/
+
+ 
+.achivement-area {
+    position: relative;
+    z-index: 1;
+}
+
+ .achivement-style-one {
+    .item {
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        padding: 60px 50px;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+        border-radius: 5px;
+        .circle {
+            position: relative;
+            margin-right: 30px;
+            margin-bottom: -10px;
+            strong  {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                color: $white;
+                font-weight: 600;
+                font-size: 30px;
+            }
+            @media only screen and (min-width: 992px) and (max-width: 1199px) {
+                margin-right: 0;
+                margin-bottom: 30px;
+            }
+            @media only screen and (max-width: 767px) {
+                margin-right: 0;
+                margin-bottom: 30px;
+            }
+        }
+        h4 {
+            font-weight: 600;
+            font-size: 24px;
+        }
+        p {
+            margin: 0;
+        }
+        &::after {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            content: "";
+            background: $dark;
+            z-index: -1;
+            opacity: 0.6;
+            border-radius: 5px;
+        }
+        &.bg-gradient {
+            &::after {
+                display: none;
+            }
+        }
+        &.bg-gradient {
+            overflow: hidden;
+            &::before {
+                position: absolute;
+                right: -20px;
+                top: -20px;
+                content: "";
+                height: 250px;
+                width: 100%;
+                background: url(../img/shape/17.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: right;
+                z-index: -1;
+                opacity: 0.8;
+            }
+        }
+        @media only screen and (min-width: 992px) and (max-width: 1199px) {
+            display: block;
+            text-align: center;
+            .counter {
+                justify-content: center;
+                margin-bottom: 30px;
+            }
+        }
+        @media only screen and (max-width: 767px) {
+            display: block;
+            text-align: center;
+            .counter {
+                justify-content: center;
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
+
+.achivement-style-one {
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+        margin-top: 30px;
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+    @media only screen and (max-width: 767px) {
+        margin-top: 30px;
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+}

@@ -1,0 +1,238 @@
+/* ----------------------------------
+    Footer Style
+ ------------------------------------*/
+
+ footer {
+     overflow: hidden;
+     position: relative;
+     z-index: 1;
+     .item {
+        @media only screen and (min-width: 768px) and (max-width: 991px) {
+            margin-top: 50px;
+        }
+        @media only screen and (max-width: 767px) {
+            margin-top: 50px;
+        }
+     }
+     .widget-title {
+        font-weight: 600;
+        font-size: 22px;
+        margin-bottom: 30px;
+     }
+     .logo {
+         margin-bottom: 30px;
+         height: 60px;
+     }
+     p {
+         color: #cccccc !important;
+     }
+     .link {
+        li {
+            margin-top: 10px;
+            &:first-child {
+                margin-top: 0;
+            }
+            a  {
+                font-weight: 400;
+                &:hover {
+                    margin-left: 10px;
+                }
+            }
+            i {
+                font-size: 14px;
+                margin-right: 5px;
+            }
+        }
+     }
+     a {
+         font-weight: 400;
+     }
+     .about {
+        padding-right: 35px;
+     }
+     .social {
+        margin-top: 30px;
+         li {
+            display: inline-block;
+            margin-right: 10px;
+            a {
+                display: inline-block;
+                height: 40px;
+                width: 40px;
+                line-height: 45px;
+                text-align: center;
+                background: rgba(255, 255, 255, 0.06);
+                border-radius: 5px;
+                font-size: 14px;
+                &:hover {
+                    background: #104cba;
+                }
+            }
+         }
+     }
+     .address {
+        padding-right: 35px;
+        li {
+            margin-top: 25px;
+            display: flex;
+            strong {
+                color: #ffffff;
+                display: block;
+                font-weight: 500;
+            }
+            i {
+                font-size: 30px;
+                color: $white;
+                margin-right: 15px;
+                position: relative;
+                top: 5px;
+                &.fal.fa-clock {
+                    font-size: 26px;
+                }
+            }
+        }
+     }
+     .newsletter {
+        position: relative;
+        padding-left: 50px;
+        form {
+            margin-top: 30px;
+        }
+        input, input:focus {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: $white;
+            @include placeholder(#cccccc, 15px, 300)
+        }
+        button {
+            border: none;
+            padding: 11px;
+            width: 100%;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-weight: 500;
+            background: transparent;
+            position: relative;
+            z-index: 1;
+            color: $white;
+            i {
+                font-weight: 100;
+            }
+            &::after {
+                position: absolute;
+                left: 0;
+                top: 0;
+                content: "";
+                height: 100%;
+                width: 100%;
+                background: $color-theme;
+                z-index: -1;
+                border-radius: 5px;
+                transition: all 0.35s ease-in-out;
+                background-size: 220% 150%;
+            }
+        }
+        &::after {
+            position: absolute;
+            left: 0;
+            top: -100%;
+            content: "";
+            height: 500%;
+            width: 300%;
+            background: #0c234a;
+            z-index: -1;
+            @media only screen and (min-width: 768px) and (max-width: 991px) {
+                display: none;
+            }
+            @media only screen and (max-width: 767px) {
+                display: none;
+            }
+        }
+        &::before {
+            position: absolute;
+            left: 0;
+            top: 0;
+            content: "";
+            height: 100%;
+            width: 3px;
+            background: $color-theme;
+            @media only screen and (max-width: 767px) {
+                display: none;
+            }
+        }
+        @media only screen and (max-width: 767px) {
+            padding-left: 0;
+        }
+     }
+     &.bg-dark {
+        li {
+            color: #cccccc;
+            a {
+                color: #cccccc;
+                &:hover {
+                    color: $white;
+                }
+            }
+        }
+        &::after {
+            position: absolute;
+            left: -50px;
+            top: -50px;
+            content: "";
+            height: 300px;
+            width: 300px;
+            background: #104cba;
+            z-index: -1;
+            border-radius: 50%;
+            filter: blur(80px);
+        }
+     }
+     .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 20px 0;
+        position: relative;
+        z-index: 1;
+        background: #091d3e;
+        p {
+            margin-bottom: 0;
+        }
+        a {
+            font-weight: 500;
+            &:hover {
+                color: $color-theme;
+            }
+        }
+        .text-right {
+            text-align: right;
+            li  {
+                display: inline-block;
+                margin-left: 20px;
+                &:first-child {
+                    margin-left: 0;
+                }
+            }
+            @media only screen and (min-width: 768px) and (max-width: 991px) {
+                text-align: center;
+                margin-top: 10px;
+            }
+            @media only screen and (max-width: 767px) {
+                text-align: center;
+                margin-top: 10px;
+            }
+        }
+        @media only screen and (min-width: 768px) and (max-width: 991px) {
+            text-align: center;
+        }
+        @media only screen and (max-width: 767px) {
+            text-align: center;
+        }
+     }
+     .f-items {
+        @media only screen and (min-width: 768px) and (max-width: 991px) {
+            padding-top: 70px;
+        }
+        @media only screen and (max-width: 767px) {
+            padding-top: 0;
+        }
+     }
+ }

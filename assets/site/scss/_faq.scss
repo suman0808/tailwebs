@@ -1,0 +1,110 @@
+/* ----------------------------------
+    Faq Style
+ ------------------------------------*/
+
+ .faq-area {
+     position: relative;
+     z-index: 1;
+     .circle-shape {
+        position: absolute;
+        z-index: -1;
+        border-radius: 50%;
+        background: linear-gradient(-62.5deg, transparent, #ffffff);
+        opacity: 0.3;
+        &:first-child {
+            top: 80px;
+            right: 120px;
+            height: 150px;
+            width: 150px;
+        }
+        &:nth-child(2) {
+            height: 600px;
+            width: 600px;
+            bottom: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0.8;
+        }
+     }
+     &.shape-less {
+        .circle-shape {
+            display: none;
+        }
+     }
+ }
+
+.faq-style-one  {
+    .accordion-item {
+        background: transparent;
+	    border: none;
+        &:first-child {
+            border: none;
+            padding-top: 0;
+            margin-top: 0;
+        }
+        .accordion-body {
+            padding-left: 0;
+            padding-top: 20px;
+            display: flex;
+            align-items: flex-start;
+            .number {
+                display: inline-block;
+                background: #ffffff;
+                min-width: 40px;
+                text-align: center;
+                height: 40px;
+                line-height: 40px;
+                font-weight: 900;
+                margin-right: 20px;
+                box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.07);
+                border: 2px solid #bad3ff;
+                color: $color-heading;
+                letter-spacing: 0.6px;
+                border-radius: 5px;
+            }
+        }
+    }
+    button.accordion-button {
+        border-radius: inherit;
+        background: transparent;
+        box-shadow: inherit;
+        border-bottom: 1px solid rgba(0, 0, 0, .125);
+        padding-left: 0;
+        color: $color-heading;
+        font-size: 20px;
+        font-weight: 600;
+        &:not(.collapsed) {
+            border-bottom: 1px solid rgba(0, 0, 0, .125);
+            color: $color-theme;
+        }
+    }
+    .heading-left {
+        margin-bottom: 15px;
+    }
+    .thumb {
+        padding-right: 35px;
+        position: relative;
+        z-index: 1;
+        img {
+            border-radius: 7px;
+        }
+        .shape {
+            position: absolute;
+            left: -80px;
+            bottom: -80px;
+            height: 100%;
+            width: 150px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: left bottom;
+        }
+        @media only screen and (min-width: 768px) and (max-width: 991px) {
+            padding-right: 0;
+            margin-bottom: 50px;
+        }
+        @media only screen and (max-width: 767px) {
+            padding-right: 0;
+            margin-bottom: 30px;
+        }
+    }
+}

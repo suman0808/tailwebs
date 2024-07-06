@@ -1,0 +1,74 @@
+/* ----------------------------------
+    Error Page Style
+ ------------------------------------*/
+
+ /* ============================================================== 
+     # Error Page
+=================================================================== */
+
+.error-page-area {
+    .shape {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        z-index: -1;
+        opacity: 0.04;
+        background-size: cover !important;
+    }
+}
+
+.error-box {
+    h1 {
+        font-size: 200px;
+        font-weight: 600;
+        line-height: 140px;
+        margin-bottom: 20px;
+        span {
+            line-height: 0;
+        }
+    }
+    .btn {
+        margin-top: 15px;
+    }
+    h2 {
+        font-weight: 500;
+    }
+	p {
+        padding: 0 10%;
+    }
+    .search {
+        text-align: center;
+        .input-group {
+            display: block;
+            width: auto;
+            max-width: initial;
+            form {
+                max-width: 70%;
+                margin: 30px auto auto;
+                position: relative;
+                input {
+                    border: 1px solid #e7e7e7;
+                    background: transparent;
+                    box-shadow: inherit;
+                    padding: 20px;
+                }
+                button {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    background: transparent;
+                    height: 50px;
+                    padding: 0 20px;
+                    border-left: 1px solid #e7e7e7 !important;
+                    i {
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+    }
+}

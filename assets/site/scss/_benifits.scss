@@ -1,0 +1,55 @@
+/* ----------------------------------
+    Benifits Style
+ ------------------------------------*/
+
+.benifits-area {
+    .bg-text {
+        margin: 0;
+        z-index: 100;
+        position: relative;
+        bottom: -55px;
+        margin-top: -90px;
+    }
+}
+
+ .benifits-style-one {
+    .item {
+        background: $white;
+        padding: 80px;
+        padding-bottom: 120px;
+        padding-top: 100px;
+        position: relative;
+        z-index: 1;
+        .bg-text {
+            position: absolute;
+            right: 35%;
+            top: -115px;
+            z-index: -1;
+        }
+        @media only screen and (max-width: 767px) {
+            padding: 50px;
+            padding-bottom: 50px;
+            padding-top: 50px;
+        }
+    }
+}
+
+.bg-text {
+    display: inline-block;
+    font-size: 180px;
+    font-weight: 900;
+    -webkit-text-stroke: 1px $white;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: cover;
+    background-position: center;
+    line-height: 1;
+    margin: 0;
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+        font-size: 122px;
+        bottom: -65px;
+    }
+    @media only screen and (max-width: 767px) {
+        display: none;
+    }
+}

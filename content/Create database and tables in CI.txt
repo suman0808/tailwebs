@@ -1,0 +1,39 @@
+$this->load->dbutil();
+		$this->load->dbforge();
+		if(@$this->dbutil->database_exists('traceqlabstest')){
+			$this->db->query('use traceqlabstest');
+			$this->dbforge->drop_table('about_us',TRUE);
+			$this->db->query("CREATE TABLE `about_us` (
+				`cms_id` int(11) NOT NULL AUTO_INCREMENT,
+				`cms_title` varchar(255) DEFAULT NULL,
+				`cms_sub_title` varchar(255) DEFAULT NULL,
+				`cms_description` mediumtext DEFAULT NULL,
+				`cms_media_type` varchar(20) DEFAULT NULL,
+				`cms_image` varchar(255) DEFAULT NULL,
+				`cms_video` varchar(255) DEFAULT NULL,
+				`cms_embed_video` varchar(255) DEFAULT NULL,
+				`updated_on` datetime DEFAULT NULL,
+				`cms_status` int(11) NOT NULL DEFAULT 1,
+				PRIMARY KEY (`cms_id`)
+			) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;");
+		}else{
+			if($this->dbforge->create_database('traceqlabstest')){
+				$this->db->query('use traceqlabstest');
+				$this->dbforge->drop_table('about_us',TRUE);
+				$this->db->query("CREATE TABLE `about_us` (
+					`cms_id` int(11) NOT NULL AUTO_INCREMENT,
+					`cms_title` varchar(255) DEFAULT NULL,
+					`cms_sub_title` varchar(255) DEFAULT NULL,
+					`cms_description` mediumtext DEFAULT NULL,
+					`cms_media_type` varchar(20) DEFAULT NULL,
+					`cms_image` varchar(255) DEFAULT NULL,
+					`cms_video` varchar(255) DEFAULT NULL,
+					`cms_embed_video` varchar(255) DEFAULT NULL,
+					`updated_on` datetime DEFAULT NULL,
+					`cms_status` int(11) NOT NULL DEFAULT 1,
+					PRIMARY KEY (`cms_id`)
+				) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;");
+			}else{
+				echo 'something went wrong';
+			}
+		}

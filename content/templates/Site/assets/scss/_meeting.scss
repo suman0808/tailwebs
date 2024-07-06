@@ -1,0 +1,177 @@
+/* ----------------------------------
+    Meeting Style
+ ------------------------------------*/
+
+ .meeting-style-one-area {
+     position: relative;
+     z-index: 1;
+     overflow: hidden;
+     .shape {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        background-size: 50%;
+        background-repeat: no-repeat;
+        background-position: right;
+        opacity: 0.4;
+     }
+     .shape-left-top {
+         opacity: 0.6;
+         position: absolute;
+         left: 0;
+         top: 0;
+         height: 100%;
+         width: 45%;
+         background-size: cover;
+         z-index: -1;
+         background-repeat: no-repeat;
+         @media only screen and (min-width: 992px) and (max-width: 1199px) {
+             width: 100%;
+             display: none;
+         }
+         @media only screen and (min-width: 768px) and (max-width: 991px) {
+             display: none;
+         }
+     }
+     @media only screen and (min-width: 768px) and (max-width: 991px) {
+         text-align: center;
+     }
+     @media only screen and (max-width: 1199px) {
+        &::after {
+            position: absolute;
+            left: 0;
+            top: 0;
+            content: "";
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            background: $dark;
+            opacity: 0.6;
+        }
+     }
+ }
+
+ .meeting-style-one {
+     ul {
+        @media only screen and (min-width: 768px) and (max-width: 991px) {
+            text-align: center !important;
+            margin-top: 40px;
+        }
+         li {
+            display: inline-block;
+            text-align: center;
+            margin-left: 30px;
+            @media only screen and (min-width: 768px) and (max-width: 991px) {
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+            @media only screen and (max-width: 767px) {
+                margin-left: 15px;
+                margin-right: 15px;
+                margin-top: 30px;
+            }
+            i {
+                display: inline-block;
+                font-size: 40px;
+                margin-bottom: 25px;
+            }
+            a {
+                display: block;
+                background: $gradient;
+                padding: 30px;
+                padding-top: 40px;
+                border-radius: 30px;
+                min-width: 220px;
+                background-size: 220% 150%;
+            }
+            img {
+                height: 50px;
+                width: auto;
+                margin-bottom: 15px;
+            }
+            h5 {
+                text-transform: capitalize;
+                font-weight: 600;
+                margin-bottom: 5px;
+                font-size: 20px;
+            }
+            p {
+                margin-bottom: 0;
+            }
+            &:last-child {
+                a {
+                    background: $white;
+                    color: $color-heading;
+                }
+                i {
+                    color: $color-heading;
+                }
+                h5 {
+                    color: $color-heading;
+                }
+                p {
+                    color: $color-text;
+                }
+            }
+         }
+         &.list {
+             li {
+                display: block;
+                text-align: left;
+                margin-left: 0;
+                padding-left: 25px;
+                line-height: 35px;
+                position: relative;
+                z-index: 1;
+                @media only screen and (max-width: 767px) {
+                    margin: 0;
+                }
+                &::after {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    content: "\f00c";
+                    font-family: "Font Awesome 5 Pro";
+                }
+             }
+             @media only screen and (max-width: 991px) {
+                 display: inline-block;
+                 margin-top: 0;
+             }
+         }
+     }
+     .fun-fact {
+         margin-top: 40px;
+         display: flex;
+         .counter {
+             margin-bottom: 0;
+         }
+         i {
+            display: inline-block;
+            font-size: 70px;
+            margin-right: 25px;
+            border-right: 1px solid rgba(255, 255, 255, 0.4);
+            padding-right: 25px;
+         }
+         @media only screen and (min-width: 768px) and (max-width: 991px) {
+             margin-top: 30px;
+             justify-content: center;
+         }
+         @media only screen and (max-width: 767px) {
+             margin-top: 30px;
+             justify-content: center;
+             display: none;
+         }
+     }
+     .text-end {
+        @media only screen and (max-width: 767px) {
+            text-align: center !important;
+        }
+     }
+     @media only screen and (max-width: 767px) {
+         text-align: center ;
+     }
+ }

@@ -1,0 +1,108 @@
+/*
+Theme Name: Crysa - It Solution Template
+Author: Validthemes
+Author URI: https://themeforest.net/user/validthemes/portfolio
+Description: Crysa - It Solution Template
+Version: 1.0.0
+*/
+
+
+// VARIABLES
+@import 'variables';
+// BASIC
+@import 'default';
+// MIX
+@import 'mixing';
+// TYPOGRAPHY
+@import 'typography';
+// HELPER
+@import 'helper';
+// ANIMATION
+@import 'animations';
+// Button 
+@import 'button';
+// Nice Select 
+@import 'nice-select';
+
+
+// WP Default CSS - Style
+
+
+/* ----------------------------------
+    Template Section Styles
+ ------------------------------------*/
+
+// Menu - Header Section 
+@import 'header';
+
+// Banner - Section 
+@import 'banner';
+
+// About - Section 
+@import 'about';
+
+// Services - Section 
+@import 'services';
+
+// Services - Section 
+@import 'achivement';
+
+// Choose Us - Section 
+@import 'choose-us';
+
+// Brand - Section 
+@import 'brand';
+
+// Projects -  Section 
+@import 'projects';
+
+// Process -  Section 
+@import 'process';
+
+// Team -  Section 
+@import 'team';
+
+// Quick Contact -  Section 
+@import 'quick-contact';
+
+// Benifits -  Section 
+@import 'benifits';
+
+// Features -  Section 
+@import 'features';
+
+// Pricing -  Section 
+@import 'pricing';
+
+// Testimonial -  Section 
+@import 'testimonials';
+
+// Fun Factor -  Section 
+@import 'fun-factor';
+
+// Gallery - Section 
+@import 'gallery';
+
+// Carousel - Faq 
+@import 'faq';
+
+// Carousel - Faq 
+@import 'meeting';
+
+// Blog -  Section 
+@import 'blog';
+
+// Contact -  Section 
+@import 'contact';
+
+// Breadcrumb -  Section 
+@import 'breadcrumb';
+
+// Error page -  Section 
+@import '404';
+
+// footer - Section 
+@import 'footer';
+
+// Preloader - Section 
+@import 'preloader';

@@ -1,0 +1,136 @@
+/* ----------------------------------
+    Pricing Style
+ ------------------------------------*/
+
+ .pricing-style-one {
+     margin-bottom: 30px;
+    .item {
+        border: 2px solid #bad3ff;
+        box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.07);
+        border-radius:10px;
+        padding: 50px;
+        .pricing-header {
+            margin-bottom: 30px;
+            p {
+                margin: 0;
+            }
+            h4 {
+                text-transform: capitalize;
+                font-weight: 600;
+            }
+            h2 {
+                font-size: 60px;
+	            font-weight: 600;
+                sub {
+                    font-size: 20px;
+                    font-weight: 400;
+                    margin-left: -15px;
+                }
+                sup {
+                    font-size: 30px;
+	                top: -22px;
+                }
+            }
+        }
+        li  {
+            margin-bottom: 8px;
+            display: flex;
+            i {
+                font-size: 14px;
+                margin-right: 10px;
+                color: $color-theme;
+                position: relative;
+                top: 6px;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        &.active {
+            background: $white;
+        }
+    }
+    .btn {
+        margin-top: 20px;
+    }
+}
+
+.pricing-tab {
+    .nav-tabs {
+        border: none;
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.6);
+        padding: 10px 0;
+        border-radius: 30px;
+        position: relative;
+        z-index: 1;
+        .nav-link {
+            display: inline-block;
+            margin: 0;
+            border: none;
+            border-radius: 30px;
+            padding: 5px 25px;
+            color: $color-heading;
+            margin-left: 10px;
+            margin-right: 10px;
+            transition: all 0.35s ease-in-out;
+            font-size: 14px;
+            font-weight: 500;
+            &.active {
+                background: $color-theme;
+	            color: $white;
+            }
+        }
+        &::after {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            content: "";
+            height: 100%;
+            width: 2px;
+            background: $gray;
+            z-index: -1;
+            margin-left: 5px;
+        }
+    }
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+        margin-top: -30px;
+        margin-bottom: 60px;
+    }
+
+    @media only screen and (max-width: 767px) {
+        margin-bottom: 30px;
+    }
+}
+
+.pricing-style-two {
+    text-align: center;
+    .item {
+        background: $white;
+        border: 2px solid $white;
+        .btn {
+            margin-top: 30px;
+        }
+        img {
+            height: 150px;
+            margin-bottom: 30px;
+        }
+        ul {
+            display: inline-block;
+        }
+        .pricing-header {
+            margin-bottom: 20px;
+            h2 {
+                sub {
+                    font-size: 16px;
+                    color: #777777;
+                }
+            }
+        }
+    }
+    &:nth-child(2) {
+        .item {
+            border-color: #104cba;
+        }
+    }
+}

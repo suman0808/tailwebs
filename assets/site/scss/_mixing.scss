@@ -1,0 +1,126 @@
+
+@mixin text-gradient($background) {
+    text-transform: uppercase;
+    font-weight: 600;
+    color: $color-theme;
+    margin-top: -5px;
+    display: inline-block;
+    background: $background;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@mixin border-radius($radius-value) {
+    -webkit-border-radius: $radius-value;
+    -moz-border-radius: $radius-value;
+    -ms-border-radius: $radius-value;
+    border-radius: $radius-value;
+}
+
+@mixin transition($transition-value) {
+    -webkit-transition: all $transition-value ease-in-out;
+    -moz-transition: all $transition-value ease-in-out;
+    -ms-transition: all $transition-value ease-in-out;
+    -o-transition: all $transition-value ease-in-out;
+    transition: all $transition-value ease-in-out;
+}
+
+@mixin transform($transform-value) {
+    -webkit-transform: $transform-value;
+    -moz-transform: $transform-value;
+    -ms-transform: $transform-value;
+    -o-transform: $transform-value;
+    transform: $transform-value;
+}
+
+@mixin bg-cover {
+    background-position: center center !important;
+    background-size: cover !important;
+}
+
+@mixin bg-fixed {
+    background-attachment: fixed !important;
+    background-position: center center !important;
+    background-size: cover !important;
+}
+
+@mixin bg-fit {
+    background-size: 100% 100% !important;
+    background-position: center !important;
+}
+
+@mixin relative {
+    position: relative;
+    z-index: 1;
+}
+
+@mixin  shadow($backgournd, $opacity) {
+    position: relative;
+    z-index: 1;
+
+    &:after {
+        background: $backgournd none repeat scroll 0 0;
+        content: "";
+        height: 100%;
+        left: 0;
+        opacity: $opacity;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: -1;
+        @include transition(0.35s)  
+    }
+}
+
+
+@mixin before($top, $right, $bottom, $left, $height, $width, $zindex) {
+    position: absolute;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+    content: "";
+    height: $height;
+    width: $width;
+    z-index: $zindex;
+}
+
+@mixin after($top, $right, $bottom, $left, $height, $width, $zindex) {
+    position: absolute;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+    content: "";
+    height: $height;
+    width: $width;
+    z-index: $zindex;
+}
+
+@mixin placeholder($color, $font-size, $font-weight) {
+    &::-webkit-input-placeholder {
+        color: $color;
+        font-size: $font_size;
+        font-weight: $font_weight;
+    }
+
+    &::-moz-placeholder {
+        color: $color;
+        font-size: $font_size;
+        font-weight: $font_weight;
+    }
+
+    &:-ms-input-placeholder {
+        color: $color;
+        font-size: $font_size;
+        font-weight: $font_weight;
+    }
+
+    &:-moz-placeholder {
+        color: $color;
+        font-size: $font_size;
+        font-weight: $font_weight;
+    }
+}

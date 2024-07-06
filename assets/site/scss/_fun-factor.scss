@@ -1,0 +1,78 @@
+/* ----------------------------------
+    Fun Factor Style
+ ------------------------------------*/
+
+ .fun-fact .counter {
+    position: relative;
+  }
+  
+  .fun-fact .counter {
+      position: relative;
+      display: flex;
+      align-items: center;
+      font-size: 60px;
+      font-weight: 500;
+      color: $color-heading;
+      line-height: 1;
+      margin-bottom: 5px;
+      margin-top: -5px;
+  }
+  
+  .text-light .fun-fact .counter {
+      color: $white;
+  }
+  
+  .fun-fact .operator {
+    font-size: 50px;
+    margin-left: 2px;
+  }
+  
+  .fun-fact .medium {
+      font-weight: 600;
+      color: $color-heading;
+  }
+  
+  .text-light .fun-fact .medium {
+      color: $white;
+  }
+  
+
+.fun-fact-style-one {
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    &:last-child {
+        border: none;
+    }
+    .fun-fact {
+        padding: 0 50px;
+    }
+    .medium {
+        font-size: 27px;
+        display: block;
+        margin-bottom: 0;
+    }
+    .counter {
+        margin-bottom: 15px;
+        @media only screen and (max-width: 991px) {
+            justify-content: center;
+        }
+    }
+    .operator {
+        font-size: 60px;
+        font-weight: 300;
+    }
+    p {
+        margin: 0;
+        opacity: 0.9;
+    }
+    @media only screen and (max-width: 991px) {
+        margin-top: 50px;
+        text-align: center;
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+}
+
+.fun-fact-style-one-box {
+    margin: 0 -50px;
+}

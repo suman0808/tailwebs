@@ -1,0 +1,225 @@
+/* ----------------------------------
+    Top Bar
+ ------------------------------------*/
+
+ .top-bar {
+    .info {
+        i {
+            margin-right: 5px;
+            position: relative;
+            top: 1px;
+        }
+        @media only screen and (min-width: 768px) and (max-width: 991px) {
+            text-align: center;
+        }
+    }
+    li  {
+        display: inline-block;
+        margin-right: 30px;
+        @media only screen and (min-width: 768px) and (max-width: 991px) {
+            margin: 0 15px;
+        }
+    }
+    .text-right {
+        li {
+            margin-right: 0;
+            margin-left: 20px;
+        }
+    }
+    .item-flex {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        > div {
+            margin-right: 40px;
+            &:last-child {
+                margin-left: 0;
+            }
+        }
+        &.text-right {
+            > div {
+                margin-right: 0;
+                margin-left: 40px;
+                &:last-child {
+                    margin-left: 40px;
+                }
+                &:first-child {
+                    margin-left: 0;
+                }
+            }
+        }
+        @media only screen and (min-width: 768px) and (max-width: 991px) {
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            margin-top: 15px;
+            display: none;
+            li {
+                margin: 0 15px;
+            }
+        }
+    }
+    @media only screen and (max-width: 767px) {
+        display: none;
+    }
+ }
+
+ .top-style-one {
+     padding: 12px 0;
+ }
+
+ @media (min-width: 1200px) {
+    .top-bar .container-fill.pr, 
+    .navbar .container-fill.pr {
+        padding-left: 0;
+        padding-right: 80px;
+    }
+ }
+
+ /* Navbar Style */
+ @media (min-width: 1200px) {
+    .navbar.brand-style-bg {
+        .navbar-header {
+            padding: 51px 0;
+            position: relative;
+            top: -61px;
+            margin-bottom: -70px;
+            display: flex;
+            justify-content: center;
+            img.logo.logo-scrolled {
+                display: none;
+            }
+            &::after {
+                position: absolute;
+                left: 0;
+                top: 0;
+                content: "";
+                height: 100%;
+                width: 100%;
+                background: #104cba;
+                z-index: -1;
+            }
+            &::before {
+                position: absolute;
+                right: -30px;
+                top: 0;
+                content: "";
+                border-right: 30px solid transparent;
+                border-bottom: 52px solid #104cba;
+                opacity: 0.7;
+            }
+        }
+        &.sticked {
+            .navbar-header {
+                padding: 14px 0;
+                top: 0;
+                margin: 0;
+                .navbar-brand {
+                    padding-left: 50px;
+                }
+                img.logo.logo-scrolled {
+                    display: inline-block;
+                }
+                img.logo.logo-display {
+                    display: none;
+                }
+                &::after, &::before {
+                    display: none;
+                }
+            }
+        }
+    }
+    
+
+    .container-fill.pr .info {
+        padding-left: 80px;
+    }
+    .container-fill.pr .navbar-collapse.collapse {
+        padding-left: 55px;
+    }
+
+    .navbar.navbar-default.attr-border-full {
+        .container-fill {
+            padding: 0 80px;
+            padding-right: 0;
+        }
+        .navbar-header {
+            position: relative;
+            padding-right: 25px;
+            .navbar-brand {
+                padding: 31px 0;
+            }
+            &::after {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                content: "";
+                border-right: 1px solid rgba(255, 255, 255, 0.3);
+                height: 100%;
+            }
+        }
+        .attr-right {
+            .attr-nav {
+                li {
+                    &.contact {
+                        position: relative;
+                        padding: 32px 30px;
+                        margin-left: 30px;
+                        top: 0;
+                        background: #104cba;
+                        &::after {
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+ }
+
+ @media (max-width: 1199px) {
+    .navbar.brand-style-bg {
+        .navbar-header {
+            .navbar-brand {
+                padding-left: 0;
+                img.logo.logo-display {
+                    display: none;
+                }
+            }
+        }
+    }
+ }
+
+ @media only screen and (min-width: 1200px) and (max-width: 1350px) {
+    .navbar.validnavs.navbar-default {
+        .navbar-nav {
+            li {
+                a {
+                    padding: 30px 10px !important;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+ }
+
+ @media only screen and (min-width: 1024px) and (max-width: 1199px) {
+    .navbar.validnavs.navbar-default {
+        .navbar-nav {
+            li {
+                a {
+                    padding: 30px 8px !important;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+ }
+
+ @media (min-width: 768px) {
+     .navbar.no-background.top-pad-50 {
+         margin-top: 58px !important;
+     }
+ }
