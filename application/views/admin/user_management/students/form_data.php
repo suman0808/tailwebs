@@ -89,7 +89,7 @@
                         window.location.href = "<?php echo base_url();?>"+link;
                     }else if(split_data.type == 'added'){
                         Snackbar.show({
-                            text: 'Admin added successfully',
+                            text: 'Student added successfully',
                             pos: 'bottom-center'
                         });
                         if(list_count == 0){
@@ -101,10 +101,14 @@
                         $("#form_data_div").modal('hide');
                     }else if(split_data.type == 'updated'){
                         Snackbar.show({
-                            text: 'Admin updated successfully',
+                            text: 'Student updated successfully',
                             pos: 'bottom-center'
                         });
+                        if(id == '' || id == undefined || id == null){
+                        $("#list_item_"+split_data.edit_id).html(split_data.list_data);
+                        }else{
                         $("#list_item_"+id).html(split_data.list_data);
+                    }
                         $("#load_screen").addClass('d-none');
                         $("#form_data_div").modal('hide');
                     }else{

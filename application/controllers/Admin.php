@@ -1219,8 +1219,8 @@ class Admin extends CI_Controller {
             $response['type'] = 'redirect';
             $response['link'] = 'ad-auth-unlock';
         }else{
-            $this->form_validation->set_rules('name', 'name', 'trim|required|xss_clean|callback__check_student_name');
-            $this->form_validation->set_rules('subject', 'Subject', 'trim|required|xss_clean');
+            $this->form_validation->set_rules('name', 'name', 'trim|required|xss_clean');
+            $this->form_validation->set_rules('subject', 'Subject', 'trim|required|xss_clean|callback__check_student_subject');
             $this->form_validation->set_rules('marks', 'Marks', 'trim|required|xss_clean');
             if($this->form_validation->run() == FALSE){
                 $response['type'] = 'error';
@@ -1235,15 +1235,26 @@ class Admin extends CI_Controller {
                 $inputs['subject'] = $this->input->post('subject');
                 $inputs['marks'] = $this->input->post('marks');
                 $inputs['updated_on'] = date('Y-m-d H:i:s');
-                $where['student_id'] = @$this->input->post('student_id');
                 if(@$this->input->post('student_id')){
+                    $where['student_id'] = @$this->input->post('student_id');
                     $update_table = $this->Admin_data_model->updateData('students',$where,$inputs);
                 }else{
-                    $insert_table = $this->Admin_data_model->saveData('students',$inputs);
+                    $where = array();
+                    $where['name'] = @$this->input->post('name');
+                    $where['subject'] = @$this->input->post('subject');
+                    $validate_data = $this->Admin_data_model->getSingleRow('students',$where);
+                    if(@$validate_data){
+                        $where['student_id'] = @$validate_data->student_id;
+                        $inputs['marks'] = @$validate_data->marks + $this->input->post('marks');
+                        $update_table = $this->Admin_data_model->updateData('students',$where,$inputs);
+                    }else{
+                        $insert_table = $this->Admin_data_model->saveData('students',$inputs);
+                    }
                 }
                 if(@$update_table){
                     $response['type'] = 'updated';
                     $data['list_type'] = 1;
+                    $response['edit_id'] = $where['student_id'];
                     $data['list'] = $this->Admin_data_model->getSingleRow('students',$where);
                     $response['list_data'] = $this->load->view('admin/user_management/students/single_list_data',$data,true);
                 }else if(@$insert_table){
@@ -1260,13 +1271,19 @@ class Admin extends CI_Controller {
         }
         echo json_encode($response);
     }
-    function _check_student_name(){
-        $where['name'] = @$this->input->post('name');
-        $where_not[] = 'student_id,'.@$this->input->post('student_id');
-        $validate_data = $this->Admin_data_model->getSingleRow('students',$where,$where_not);
-        if(@$validate_data){
-            $this->form_validation->set_message('_check_student_name','Student name already taken!');
-            return false;
+    function _check_student_subject(){
+        if(@$this->input->post('student_id')){
+            $where['name'] = @$this->input->post('name');
+            $where['subject'] = @$this->input->post('subject');
+            $where['marks'] = @$this->input->post('marks');
+            $where_not[] = 'student_id,'.@$this->input->post('student_id');
+            $validate_data = $this->Admin_data_model->getSingleRow('students',$where,$where_not);
+            if(@$validate_data){
+                $this->form_validation->set_message('_check_student_subject','already taken!');
+                return false;
+            }else{
+                return true;
+            }
         }else{
             return true;
         }
